@@ -14,6 +14,8 @@ export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  console.log(email, token);
+
   function handleLogout() {
     dispatch(logout());
     router.push('/login');
