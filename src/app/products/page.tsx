@@ -98,7 +98,7 @@ export default function ProductsPage() {
           <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 text-center">
             <AlertCircle className="w-12 h-12 text-red-600 mx-auto mb-4" />
             <p className="text-red-800 text-lg font-semibold">Failed to load products</p>
-            <p className="text-red-600 text-sm mt-2">Please try again later</p>
+            <p className="text-red-600 text-sm mt-2">Please first <span className=' uppercase font-bold'><Link href="/login">login</Link></span> and try again later</p>
           </div>
         )}
 
