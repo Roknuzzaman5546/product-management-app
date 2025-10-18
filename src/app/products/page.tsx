@@ -1,12 +1,11 @@
 // app/products/page.tsx
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useGetProductsQuery, useDeleteProductMutation, useSearchProductsQuery } from '../../store/api';
 import ProductCard from '../../components/ProductCard';
 import Pagination from '../../components/Pagination';
 import ConfirmModal from '../../components/ConfirmModal';
-import { useAppSelector } from '../../hooks';
 import { Plus, Search, Package, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function ProductsPage() {

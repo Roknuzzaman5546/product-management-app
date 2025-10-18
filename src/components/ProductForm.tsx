@@ -10,6 +10,7 @@ import { Package, DollarSign, Image, Tag, FileText, Save, Loader2, ArrowLeft } f
 import Link from 'next/link';
 
 const Schema = z.object({
+  id: z.string().uuid().optional(),
   name: z.string().min(2,'Name too short'),
   description: z.string().min(2,'Description too short'),
   price: z.number().positive('Price must be > 0'),
