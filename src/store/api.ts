@@ -35,9 +35,9 @@ export const api = createApi({
         providesTags: (result) =>
           result
             ? [
-                ...result.map((p: any) => ({ type: 'Product' as const, id: p.id })),
-                { type: 'Products', id: 'LIST' },
-              ]
+              ...result.map((p: any) => ({ type: 'Product' as const, id: p.id })),
+              { type: 'Products', id: 'LIST' },
+            ]
             : [{ type: 'Products', id: 'LIST' }],
       }
     ),
@@ -60,9 +60,12 @@ export const api = createApi({
       query: ({ id, body }) => ({ url: `/products/${id}`, method: 'PUT', body }),
       invalidatesTags: (result, error, { id }) => [{ type: 'Product', id }, { type: 'Products', id: 'LIST' }],
     }),
-    deleteProduct: builder.mutation<any, string>({
-      query: (id) => ({ url: `/products/${id}`, method: 'DELETE' }),
-      invalidatesTags: (result, error, id) => [{ type: 'Product', id }, { type: 'Products', id: 'LIST' }],
+    deleteProduct: builder.mutation<void, string>({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Products"],
     }),
     getCategories: builder.query<any, { offset?: number; limit?: number }>({
       query: ({ offset = 0, limit = 50 } = {}) => `/categories?offset=${offset}&limit=${limit}`,

@@ -57,6 +57,7 @@ export default function ProductDetail() {
   }
 
   async function handleDelete() {
+    console.log(data.id, 'check id');
     await deleteProduct(data.id).unwrap();
     router.push('/products');
   }
