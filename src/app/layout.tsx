@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StoreProvider>
           <div className="min-h-screen bg-bg">
              <Header />
-            <main className="max-w-6xl mx-auto p-4">{children}</main>
+            <main className="">{children}</main>
           </div>
         </StoreProvider>
       </body>

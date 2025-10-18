@@ -43,7 +43,7 @@ export default function LoginPage() {
           />
           {formState.errors.email && <div className="text-sm text-danger mt-1">{formState.errors.email.message}</div>}
         </div>
-        <button type="submit" className="w-full bg-primary text-white py-2 rounded-md">
+        <button type="submit" className="w-full bg-primary text-black py-2 rounded-md">
           Sign in
         </button>
         <p className="text-xs text-muted mt-2">Use the same email you used on your job application.</p>
